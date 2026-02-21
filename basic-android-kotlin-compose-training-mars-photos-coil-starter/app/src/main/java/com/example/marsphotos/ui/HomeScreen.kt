@@ -69,56 +69,41 @@ fun HomeScreen(navController: NavHostController, viewModel: SNViewModel) {
 
 
     MenuLateral(navController = navController, drawerState = drawerState) {
-        Scaffold(
-            topBar = { TopBar(drawerState) },
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color.White)
-        ) { innerPadding ->
-            LazyColumn(
-                modifier = Modifier
-                    .padding(innerPadding)
-                    .fillMaxSize()
-            ) {
-                item {
-                    Row(
+                .padding(24.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            if (profile != null) {
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+                ) {
+                    Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(bottom = 16.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowBack,
-                            contentDescription = stringResource(R.string.regresar_Tareas),
-                            modifier = Modifier
-                                .size(35.dp)
-                                .padding(end = 8.dp)
-                                .clickable { navController.popBackStack() },
-                            tint = Color.Gray,
+                        Text(
+                            text = "Bienvenido",
+                            style = MaterialTheme.typography.headlineMedium
                         )
-                        texto(stringResource(R.string.tareas1), Modifier.weight(1f))
-                    }
-                    cuadroDeBusqueda()
-                    Button(
-                        onClick = { navController.navigate(route = Rutas.AgregarTareas.ruta) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 30.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF1567A6),
-                            contentColor = Color.White
+                        Text(
+                            text = "Alumno: ${profile.nombre}",
+                            style = MaterialTheme.typography.bodyLarge
                         )
-                    ) {
-                        Text(text = stringResource(R.string.agregar_tarea_Tarea))
+                        Text("Matrícula: ${profile.matricula}")
+                        Text("Carrera: ${profile.carrera}")
+                        Text("Semestre: ${profile.semestre}")
+                        Text("Creditos acumulados: ${profile.creditos}")
                     }
                 }
-
-                items(tareas) { tarea ->
-                    cuadroDeTareas(tarea, notaViewModel = notaViewModel, navController)
-                    Spacer(modifier = Modifier.height(30.dp))
-                }
+            } else {
+                Text("No se pudo cargar el perfil", color = Color.Red)
             }
         }
     }
-
 }
