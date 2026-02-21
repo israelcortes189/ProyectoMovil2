@@ -28,7 +28,7 @@ import com.example.marsphotos.ui.screens.SNViewModel
 fun CargaAcademica(navController: NavHostController, viewModel: SNViewModel) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
 
-    MenuLateral(navController = navController, drawerState = drawerState) {
+    MenuLateral(navController = navController, drawerState = drawerState, viewModel) {
         //Esqueleto de la UI con barra superior, menú lateral y contenido
         Scaffold(
             topBar = {

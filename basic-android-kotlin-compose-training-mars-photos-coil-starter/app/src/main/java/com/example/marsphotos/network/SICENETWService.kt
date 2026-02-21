@@ -41,7 +41,6 @@ val bodyPerfil = """
 """.trimIndent()
 
 
-//Retrofit
 interface SICENETWService {
     // Login
     @Headers(
@@ -57,8 +56,6 @@ interface SICENETWService {
         "SOAPAction: \"http://tempuri.org/getAlumnoAcademicoWithLineamiento\""
     )
     @POST("/ws/wsalumnos.asmx")
-    suspend fun perfil(
-        @Header("Cookie") cookie: String,
-        @Body soap: RequestBody
-    ): retrofit2.Response<ResponseBody>
+    suspend fun perfil(@Body soap: RequestBody): retrofit2.Response<ResponseBody>
 }
+

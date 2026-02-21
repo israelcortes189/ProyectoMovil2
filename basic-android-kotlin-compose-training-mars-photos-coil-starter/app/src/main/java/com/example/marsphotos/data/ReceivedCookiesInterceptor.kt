@@ -4,6 +4,11 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
 
+/*Cada vez que haces una petición con Retrofit,
+el ReceivedCookiesInterceptor se ejecuta automáticamente
+porque está registrado en OkHttpClient.
+ */
+
 class ReceivedCookiesInterceptor // AddCookiesInterceptor()
     (private val context: Context) : Interceptor {
     @Throws(IOException::class)

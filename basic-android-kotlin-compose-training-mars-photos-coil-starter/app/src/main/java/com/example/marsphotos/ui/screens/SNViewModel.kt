@@ -27,17 +27,15 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.room.Room
 import com.example.marsphotos.MarsPhotosApplication
-import com.example.marsphotos.data.AppDatabase
+
 import com.example.marsphotos.data.MarsPhotosRepository
 import com.example.marsphotos.data.SNRepository
 import com.example.marsphotos.model.MarsPhoto
 import com.example.marsphotos.model.ProfileStudent
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
-import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 /**
  * UI state for the Home screen
@@ -53,11 +51,20 @@ class SNViewModel(private val repository: SNRepository) : ViewModel() {
     fun hasSession(): Boolean =
         repository.hasSession()
 
+    //Funcion para cerrar sesion en el repositori, asignar perfil como nulo
+    // y asignar el estado de la sesion como cargando
+    fun logout() {
+        repository.logout()
+        profileState = null
+        snUiState = SNUiState.Loading
+    }
+
     var profileState by mutableStateOf<ProfileStudent?>(null)
         private set
 
     var isLoading by mutableStateOf(false)
         private set
+
 
     fun loadProfile() {
         if (!repository.hasSession()) return
@@ -84,20 +91,31 @@ class SNViewModel(private val repository: SNRepository) : ViewModel() {
         checkSession()
     }
 
+    //Funcion para chacar si hay sesion activa en el repositori
+    //tambien revisar si hay un perfil activo, en caso contrario ejecuta en el repositorio
+    //la funcion cerrar secion para que se mande al flujo pedir un nuevo inicio de secion
     private fun checkSession() {
         viewModelScope.launch {
             if (repository.hasSession()) {
-                loadProfile()
+                val profile = repository.profile()
+                if (profile == null) {
+                    repository.logout()
+                    snUiState = SNUiState.Error
+                } else {
+                    profileState = profile
+                }
             }
         }
     }
 
+    /*
     //base de datos
     val db = Room.databaseBuilder(
         context,
         AppDatabase::class.java,
         "sicenet_database"
     ).build()
+    */
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the
@@ -123,9 +141,6 @@ class SNViewModel(private val repository: SNRepository) : ViewModel() {
         }
     }
 
-    /**
-     * Factory for [MarsViewModel] that takes [MarsPhotosRepository] as a dependency
-     */
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
@@ -135,4 +150,5 @@ class SNViewModel(private val repository: SNRepository) : ViewModel() {
             }
         }
     }
+
 }

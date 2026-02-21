@@ -1,6 +1,8 @@
 package com.example.marsphotos.componentes
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ModalDrawerSheet
@@ -13,12 +15,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.marsphotos.model.getMenuItems
+import com.example.marsphotos.ui.navigation.Rutas
 import com.example.marsphotos.ui.navigation.currentRoute
+import com.example.marsphotos.ui.screens.SNViewModel
 
 @Composable
 fun MenuLateral(
     navController: NavHostController,
     drawerState: DrawerState,
+    viewModel: SNViewModel,
     contenido: @Composable () -> Unit
 ){
     val menuItems = getMenuItems()
@@ -41,6 +46,21 @@ fun MenuLateral(
                         }
                     )
                 }
+
+                NavigationDrawerItem(
+                    modifier = Modifier.padding(10.dp),
+                    icon = {
+                        Icon(Icons.Default.ExitToApp, contentDescription = "Cerrar sesión")
+                    },
+                    label = { Text("Cerrar sesión") },
+                    selected = false,
+                    onClick = {
+                        viewModel.logout()
+                        navController.navigate(Rutas.Login) {
+                            popUpTo(Rutas.Home) { inclusive = true }
+                        }
+                    }
+                )
             }
         }
     ) {

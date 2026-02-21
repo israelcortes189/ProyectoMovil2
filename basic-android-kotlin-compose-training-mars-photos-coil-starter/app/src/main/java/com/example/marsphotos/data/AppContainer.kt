@@ -32,66 +32,55 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory
  * Dependency Injection container at the application level.
  */
 interface AppContainer {
-
     val marsPhotosRepository: MarsPhotosRepository
     val snRepository: SNRepository
 }
 
 /**
- * Implementation for the Dependency Injection container at the application level.
- *
- * Variables are initialized lazily and the same instance is shared across the whole app.
+ * Implementación para el contenedor de dependencias a nivel aplicación.
+ * Variables inicializadas de forma lazy y compartidas en toda la app.
  */
 class DefaultAppContainer(applicationContext: Context) : AppContainer {
+
     private val baseUrl = "https://android-kotlin-fun-mars-server.appspot.com/"
     private val baseUrlSN = "https://sicenet.surguanajuato.tecnm.mx"
-    private var client: OkHttpClient
-    init {
-        client = OkHttpClient()
-        val builder = OkHttpClient.Builder()
-        builder.addInterceptor(AddCookiesInterceptor(applicationContext)) // VERY VERY IMPORTANT
-        builder.addInterceptor(ReceivedCookiesInterceptor(applicationContext)) // VERY VERY IMPORTANT
-        client = builder.build()
-    }
-    /**
-     * Use the Retrofit builder to build a retrofit object using a kotlinx.serialization converter
-     */
+
+    // Cliente OkHttp con interceptores de cookies
+    private val client: OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(AddCookiesInterceptor(applicationContext))     // Añade cookies guardadas
+        .addInterceptor(ReceivedCookiesInterceptor(applicationContext)) // Recibe y guarda cookies nuevas
+        .build()
+
+    // Retrofit para el servicio de ejemplo (Mars)
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
         .baseUrl(baseUrl)
         .build()
 
-
-
-    ///
+    // Retrofit para SICENET con soporte SOAP/XML
     private val retrofitSN: Retrofit = Retrofit.Builder()
         .baseUrl(baseUrlSN)
         .addConverterFactory(SimpleXmlConverterFactory.createNonStrict())
-        .client(client)
+        .client(client) // Usa el cliente con interceptores
         .build()
 
-    //bodyacceso.toRequestBody("text/xml; charset=utf-8".toMediaType())
-
-    /**
-     * Retrofit service object for creating api calls
-     */
+    // Servicio Retrofit para Mars
     private val retrofitService: MarsApiService by lazy {
         retrofit.create(MarsApiService::class.java)
     }
 
-    /**
-     * Retrofit service object for creating api calls
-     */
+    // Servicio Retrofit para SICENET
     private val retrofitServiceSN: SICENETWService by lazy {
         retrofitSN.create(SICENETWService::class.java)
     }
+
+    // Repositorio para Mars
     override val marsPhotosRepository: NetworkMarsPhotosRepository by lazy {
         NetworkMarsPhotosRepository(retrofitService)
     }
-    /**
-     * DI implementation for Mars photos repository
-     */
+
+    // Repositorio para SICENET (con context para revisar cookies)
     override val snRepository: NetworSNRepository by lazy {
-        NetworSNRepository(retrofitServiceSN)
+        NetworSNRepository(retrofitServiceSN, applicationContext)
     }
 }

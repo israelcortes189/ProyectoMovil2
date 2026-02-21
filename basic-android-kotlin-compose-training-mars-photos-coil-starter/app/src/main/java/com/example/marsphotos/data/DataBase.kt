@@ -3,6 +3,7 @@ package com.example.marsphotos.data
 import androidx.room.Database
 import androidx.room.RoomDatabase
 
+/*
 @Database(
     entities = [ProfileStudentEntity::class],
     version = 1
@@ -10,4 +11,4 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun profileStudentDao(): ProfileStudentDao
-}
+}*/

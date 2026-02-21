@@ -69,7 +69,7 @@ import java.time.LocalDateTime
 fun HomeScreen(navController: NavHostController, viewModel: SNViewModel) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
 
-    MenuLateral(navController = navController, drawerState = drawerState) {
+    MenuLateral(navController = navController, drawerState = drawerState, viewModel) {
         //Esqueleto de la UI con barra superior, menú lateral y contenido
         Scaffold(
             topBar = {

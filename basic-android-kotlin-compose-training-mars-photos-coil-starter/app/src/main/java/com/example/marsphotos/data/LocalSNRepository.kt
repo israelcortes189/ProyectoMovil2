@@ -1,5 +1,6 @@
 package com.example.marsphotos.data
 
+/*
 class LocalSNRepository(
     private val dao: ProfileStudentDao
 ) {
@@ -16,4 +17,4 @@ class LocalSNRepository(
         )
         dao.insertProfile(entity)
     }
-}
+}*/
