@@ -25,15 +25,19 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.room.Room
 import com.example.marsphotos.MarsPhotosApplication
+import com.example.marsphotos.data.AppDatabase
 import com.example.marsphotos.data.MarsPhotosRepository
 import com.example.marsphotos.data.SNRepository
 import com.example.marsphotos.model.MarsPhoto
 import com.example.marsphotos.model.ProfileStudent
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.internal.NoOpContinuation.context
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
+import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 /**
  * UI state for the Home screen
@@ -87,6 +91,13 @@ class SNViewModel(private val repository: SNRepository) : ViewModel() {
             }
         }
     }
+
+    //base de datos
+    val db = Room.databaseBuilder(
+        context,
+        AppDatabase::class.java,
+        "sicenet_database"
+    ).build()
 
     /**
      * Gets Mars photos information from the Mars API Retrofit service and updates the

@@ -44,8 +44,10 @@ interface SNRepository {
 /**
  * Implementación de red para SICENET
  */
+//Implementacion base de datos local
 class NetworSNRepository(
-    private val snApiService: SICENETWService
+    private val snApiService: SICENETWService,
+    private val localRepository: LocalSNRepository
 ) : SNRepository {
 
     private var sessionCookie: String? = null
@@ -125,6 +127,8 @@ class NetworSNRepository(
                 semestre = jsonObj.optString("semActual", ""),   // aquí tomamos el semestre real
                 creditos = jsonObj.optString("cdtosAcumulados", "") //créditos acumulados
             )
+            localRepository.saveProfile(profile())
+            profile()
         } catch (e: Exception) {
             Log.e("SOAP_PROFILE", "Error parseando JSON: ${e.message}")
             null
