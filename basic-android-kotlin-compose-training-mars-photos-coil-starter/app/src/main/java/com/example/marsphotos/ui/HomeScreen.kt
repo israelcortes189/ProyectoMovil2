@@ -35,12 +35,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -58,6 +60,7 @@ import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
 import com.example.marsphotos.componentes.MenuLateral
+import com.example.marsphotos.componentes.TopBar
 import com.example.marsphotos.model.getMenuItems
 import com.example.marsphotos.ui.screens.SNViewModel
 import java.time.LocalDateTime
@@ -65,45 +68,62 @@ import java.time.LocalDateTime
 @Composable
 fun HomeScreen(navController: NavHostController, viewModel: SNViewModel) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    val profile = viewModel.profileState
-
 
     MenuLateral(navController = navController, drawerState = drawerState) {
-        Box(
+        //Esqueleto de la UI con barra superior, menú lateral y contenido
+        Scaffold(
+            topBar = {
+                TopBar(navController, drawerState)
+            },
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp),
-            contentAlignment = Alignment.Center
-        ) {
-            if (profile != null) {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-                ) {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(16.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(12.dp)
-                    ) {
-                        Text(
-                            text = "Bienvenido",
-                            style = MaterialTheme.typography.headlineMedium
-                        )
-                        Text(
-                            text = "Alumno: ${profile.nombre}",
-                            style = MaterialTheme.typography.bodyLarge
-                        )
-                        Text("Matrícula: ${profile.matricula}")
-                        Text("Carrera: ${profile.carrera}")
-                        Text("Semestre: ${profile.semestre}")
-                        Text("Creditos acumulados: ${profile.creditos}")
-                    }
-                }
-            } else {
-                Text("No se pudo cargar el perfil", color = Color.Red)
+                .background(Color.White)
+        ) { innerPadding ->
+            Box(modifier = Modifier.padding(innerPadding)) {
+                Contenido(viewModel = viewModel)
             }
+        }
+    }
+}
+
+
+@Composable
+fun Contenido(viewModel: SNViewModel) {
+    val profile = viewModel.profileState
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        if (profile != null) {
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Text(
+                        text = "Bienvenido",
+                        style = MaterialTheme.typography.headlineMedium
+                    )
+                    Text(
+                        text = "Alumno: ${profile.nombre}",
+                        style = MaterialTheme.typography.bodyLarge
+                    )
+                    Text("Matrícula: ${profile.matricula}")
+                    Text("Carrera: ${profile.carrera}")
+                    Text("Semestre: ${profile.semestre}")
+                    Text("Creditos acumulados: ${profile.creditos}")
+                }
+            }
+        } else {
+            Text("No se pudo cargar el perfil", color = Color.Red)
         }
     }
 }
