@@ -6,9 +6,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.marsphotos.ui.CalificacionFinal
+import com.example.marsphotos.ui.CalificacionesUnidad
 import com.example.marsphotos.ui.CargaAcademica
 import com.example.marsphotos.ui.LoginScreen
 import com.example.marsphotos.ui.HomeScreen
+import com.example.marsphotos.ui.Kardex
 import com.example.marsphotos.ui.screens.SNViewModel
 
 //Ruta actual del nav controller para marcar en la barra lateral
@@ -63,14 +66,16 @@ fun AppNavHost(
         composable(Rutas.CargaAcademica) {
             CargaAcademica(navController, viewModel = viewModel)
         }
+
         composable(Rutas.Kardex) {
-            // TODO: Pantalla de kardex
+            Kardex(navController = navController, viewModel = viewModel)
         }
+
         composable(Rutas.CalificacionesParciales) {
-            // TODO: Pantalla de calificaciones parciales
+            CalificacionesUnidad(navController, viewModel = viewModel)
         }
         composable(Rutas.ClificacionFinal) {
-            // TODO: Pantalla de calificación final
+            CalificacionFinal(navController, viewModel = viewModel)
         }
     }
 }

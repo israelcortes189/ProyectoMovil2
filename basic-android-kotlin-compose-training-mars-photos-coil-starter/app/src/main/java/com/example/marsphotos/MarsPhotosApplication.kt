@@ -16,17 +16,39 @@
 package com.example.marsphotos
 
 import android.app.Application
+import android.util.Log
+import androidx.work.WorkManager
 import com.example.marsphotos.data.AppContainer
 import com.example.marsphotos.data.DefaultAppContainer
-
+import com.example.marsphotos.data.datbase.AppDatabase
+import com.example.marsphotos.workers.AppWorkerFactory
+import androidx.work.Configuration
 
 
 
 class MarsPhotosApplication : Application() {
-    /** AppContainer instance used by the rest of classes to obtain dependencies */
+
     lateinit var container: AppContainer
     override fun onCreate() {
         super.onCreate()
+
+        // Inicializar contenedor
         container = DefaultAppContainer(applicationContext)
+
+        val workerFactory = AppWorkerFactory(container.mainRepository, container.localRepository)
+        val config = Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
+
+        if (!WorkManager.isInitialized()) {
+            WorkManager.initialize(this, config)
+            Log.d("APP", "WorkManager inicializado con AppWorkerFactory (manual)")
+        } else {
+            Log.d("APP", "WorkManager ya inicializado, omitiendo initialize()")
+        }
+
     }
+
 }
+
+

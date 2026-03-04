@@ -18,8 +18,13 @@ package com.example.marsphotos.data
 import AddCookiesInterceptor
 import ReceivedCookiesInterceptor
 import android.content.Context
+import com.example.marsphotos.data.datbase.AppDatabase
 import com.example.marsphotos.network.MarsApiService
 import com.example.marsphotos.network.SICENETWService
+import com.example.marsphotos.repository.LocalRepository
+import com.example.marsphotos.repository.MainRepository
+import com.example.marsphotos.repository.NetworSNRepository
+import com.example.marsphotos.repository.SNRepository
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -34,6 +39,12 @@ import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 interface AppContainer {
     val marsPhotosRepository: MarsPhotosRepository
     val snRepository: SNRepository
+
+    // Añadidas para inyección en Workers
+    val database: AppDatabase
+    val localRepository: LocalRepository
+    val mainRepository: MainRepository
+
 }
 
 /**
@@ -83,4 +94,26 @@ class DefaultAppContainer(applicationContext: Context) : AppContainer {
     override val snRepository: NetworSNRepository by lazy {
         NetworSNRepository(retrofitServiceSN, applicationContext)
     }
+
+    // Base de datos y repositorios locales
+    override val database: AppDatabase by lazy {
+        AppDatabase.getDatabase(applicationContext)
+    }
+
+
+    // MainRepository que combina local + remoto
+    override val mainRepository: MainRepository by lazy {
+        MainRepository(localRepository, snRepository)
+    }
+
+    override val localRepository: LocalRepository by lazy {
+        LocalRepository(
+            database.profileDao(),
+            database.cardexDao(),
+            database.cargaDao(),
+            database.CalificacionUnidadDao(),
+            database.CalificacionFinalDao()
+        )
+    }
 }
+

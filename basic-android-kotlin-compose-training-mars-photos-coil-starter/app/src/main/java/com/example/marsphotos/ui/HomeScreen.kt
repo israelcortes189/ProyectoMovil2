@@ -41,6 +41,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -50,6 +51,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -59,9 +62,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHostController
+import androidx.work.WorkInfo
 import com.example.marsphotos.componentes.MenuLateral
 import com.example.marsphotos.componentes.TopBar
 import com.example.marsphotos.model.getMenuItems
+import com.example.marsphotos.ui.screens.SNUiState
 import com.example.marsphotos.ui.screens.SNViewModel
 import java.time.LocalDateTime
 
@@ -89,41 +94,43 @@ fun HomeScreen(navController: NavHostController, viewModel: SNViewModel) {
 
 @Composable
 fun Contenido(viewModel: SNViewModel) {
+    val snUiState = viewModel.snUiState
     val profile = viewModel.profileState
+
     Box(
         modifier = Modifier
             .fillMaxSize()
             .padding(24.dp),
         contentAlignment = Alignment.Center
     ) {
-        if (profile != null) {
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-            ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    Text(
-                        text = "Bienvenido",
-                        style = MaterialTheme.typography.headlineMedium
-                    )
-                    Text(
-                        text = "Alumno: ${profile.nombre}",
-                        style = MaterialTheme.typography.bodyLarge
-                    )
-                    Text("Matrícula: ${profile.matricula}")
-                    Text("Carrera: ${profile.carrera}")
-                    Text("Semestre: ${profile.semestre}")
-                    Text("Creditos acumulados: ${profile.creditos}")
+        when (snUiState) {
+            is SNUiState.Loading -> CircularProgressIndicator()
+            is SNUiState.Error -> Text("Error en la sesión, inicia nuevamente", color = Color.Red)
+            is SNUiState.Success -> {
+                if (profile != null) {
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(12.dp)
+                        ) {
+                            Text("Bienvenido", style = MaterialTheme.typography.headlineMedium)
+                            Text("Alumno: ${profile.nombre}", style = MaterialTheme.typography.bodyLarge)
+                            Text("Matrícula: ${profile.matricula}")
+                            Text("Carrera: ${profile.carrera}")
+                            Text("Semestre actual: ${profile.semActual}")
+                            Text("Créditos acumulados: ${profile.cdtosAcumulados}")
+                        }
+                    }
+                } else {
+                    Text("Esperando sincronización...")
                 }
             }
-        } else {
-            Text("No se pudo cargar el perfil", color = Color.Red)
         }
     }
 }
