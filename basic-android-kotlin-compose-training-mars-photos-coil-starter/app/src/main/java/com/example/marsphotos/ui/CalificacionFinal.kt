@@ -37,18 +37,15 @@ import com.example.marsphotos.ui.screens.SNViewModel
 @Composable
 fun CalificacionFinal(
     navController: NavHostController,
-    viewModel: SNViewModel,
-    matricula: String? = null,      // null = usar la guardada en ViewModel
-    modEducativo: Int = 9,          // ajusta según tu API si hace falta
-    online: Boolean = true
+    viewModel: SNViewModel
 ) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val califFinal by viewModel.califFinalState.collectAsState()
 
     // Cargar al entrar (matricula = null -> ViewModel usará getSavedMatricula())
-    LaunchedEffect(matricula, modEducativo, online) {
-        viewModel.loadCalificacionFinal(matricula = matricula, modEducativo = modEducativo, online = online)
-    }
+
+
+    viewModel.loadCalificacionFinal()
 
     MenuLateral(navController = navController, drawerState = drawerState, viewModel) {
         Scaffold(

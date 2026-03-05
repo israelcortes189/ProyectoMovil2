@@ -59,7 +59,6 @@ fun AppNavHost(
             )
         }
 
-
         composable(Rutas.Home) {
             HomeScreen(navController, viewModel = viewModel)
         }

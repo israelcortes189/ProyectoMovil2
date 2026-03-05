@@ -13,128 +13,106 @@ import com.example.marsphotos.model.entityes.CalificacionUnidadItem
 import com.example.marsphotos.model.entityes.CardexItem
 import com.example.marsphotos.model.entityes.CargaItem
 import com.example.marsphotos.model.entityes.ProfileStudent
-import com.example.marsphotos.repository.LocalRepository
+import com.example.marsphotos.repository.MainRepository
 import com.google.gson.Gson
 import java.util.UUID
+import androidx.work.ListenableWorker.Result as WorkResult
 
 class LocalWorker(
     context: Context,
     params: WorkerParameters,
-    private val localRepository: LocalRepository
+    private val mainRepository: MainRepository
 ) : CoroutineWorker(context, params) {
 
-    constructor(context: Context, params: WorkerParameters) : this(
-        context,
-        params,
-        (context.applicationContext as MarsPhotosApplication).container.localRepository
+    // Constructor secundario para instanciación por reflexión
+    constructor(context: Context, params: WorkerParameters) : this(context, params,
+        (context.applicationContext as MarsPhotosApplication).container.mainRepository
     )
 
-    override suspend fun doWork(): Result {
+    private val gson = Gson()
+
+    override suspend fun doWork(): WorkResult {
+        val tipo = inputData.getString("tipo") ?: return WorkResult.failure()
+        val matricula = inputData.getString("matricula") ?: return WorkResult.failure()
+        val remoteIdStr = inputData.getString("remoteId")
+
         try {
-            val tipo = inputData.getString("tipo") ?: return Result.failure()
-            val matricula = inputData.getString("matricula") ?: return Result.failure()
-            val remoteIdStr = inputData.getString("remoteId") // puede venir desde syncData
-
-            // 1) Intentar obtener result desde el remote usando remoteId
-            var resultJson: String? = null
-            if (!remoteIdStr.isNullOrBlank()) {
-                try {
-                    val remoteId = UUID.fromString(remoteIdStr)
-                    val workInfo = WorkManager.getInstance(applicationContext).getWorkInfoById(remoteId).get()
-                    resultJson = workInfo?.outputData?.getString("result")
-                    Log.d("LOCAL_WORKER", "Leído output del RemoteWorker id=$remoteIdStr, length=${resultJson?.length ?: 0}")
-                } catch (e: Exception) {
-                    Log.w("LOCAL_WORKER", "No se pudo leer output del remoteId: $remoteIdStr -> ${e.message}")
-                }
+            // 1. Obtener el JSON (del RemoteWorker o del input directo)
+            val resultJson = getResultJson(remoteIdStr)
+            if (resultJson.isNullOrBlank() || resultJson == "null") {
+                Log.e("LOCAL_WORKER", "No hay JSON para $tipo")
+                return WorkResult.failure()
             }
 
-            // 2) Si no hay result desde remoteId, intentar leer "result" directamente del inputData
-            if (resultJson.isNullOrBlank()) {
-                resultJson = inputData.getString("result")
-                Log.d("LOCAL_WORKER", "Result tomado de inputData, length=${resultJson?.length ?: 0}")
-            }
-
-            if (resultJson.isNullOrBlank()) {
-                Log.e("LOCAL_WORKER", "No hay result JSON para tipo=$tipo matricula=$matricula")
-                return Result.failure()
-            }
-
-            val gson = Gson()
-
+            // 2. Procesar según el tipo
             when (tipo) {
-                "perfil" -> {
-                    // El remote puede devolver un DTO (ProfileStudent) o ya una ProfileEntity serializada.
-                    try {
-                        // Intentar parsear como ProfileEntity (caso ideal si Remote ya envía entity)
-                        val perfilEntity = gson.fromJson(resultJson, ProfileEntity::class.java)
-                        if (!perfilEntity.matricula.isNullOrBlank()) {
-                            localRepository.insertProfile(perfilEntity)
-                            Log.d("LOCAL_WORKER", "input remoteId=${inputData.getString("remoteId")}, tipo=$tipo, matricula=$matricula")
-                            Log.d("LOCAL_WORKER", "Leído result length=${resultJson?.length ?: 0}")
-// después de insertar
-                            Log.d("LOCAL_WORKER", "Insertado tipo=$tipo matricula=$matricula")
-
-                        } else {
-                            throw Exception("ProfileEntity vacío")
-                        }
-                    } catch (e: Exception) {
-                        // Fallback: parsear DTO y mapear a Entity
-                        try {
-                            val perfilDto = gson.fromJson(resultJson, ProfileStudent::class.java)
-                            val entity = ProfileEntity(
-                                matricula = perfilDto.matricula,
-                                nombre = perfilDto.nombre,
-                                carrera = perfilDto.carrera,
-                                semActual = perfilDto.semActual,
-                                cdtosAcumulados = perfilDto.cdtosAcumulados
-                            )
-                            localRepository.insertProfile(entity)
-                            Log.d("LOCAL_WORKER", "ProfileStudent mapeado e insertado: ${entity.matricula}")
-                        } catch (ex: Exception) {
-                            Log.e("LOCAL_WORKER", "Error parseando perfil: ${ex.message}")
-                            return Result.failure()
-                        }
-                    }
-                }
-
+                "perfil" -> saveProfile(resultJson)
                 "cardex" -> {
                     val items = gson.fromJson(resultJson, Array<CardexItem>::class.java).toList()
-                    localRepository.insertCardex(matricula, items)
-                    Log.d("LOCAL_WORKER", "Cardex insertado: count=${items.size}")
+                    mainRepository.localRepository.insertCardex(matricula, items)
                 }
-
                 "carga" -> {
                     val items = gson.fromJson(resultJson, Array<CargaItem>::class.java).toList()
-                    localRepository.insertCarga(matricula, items)
-                    Log.d("LOCAL_WORKER", "Carga insertada: count=${items.size}")
+                    mainRepository.localRepository.insertCarga(matricula, items)
                 }
-
                 "califUnidades" -> {
                     val items = gson.fromJson(resultJson, Array<CalificacionUnidadItem>::class.java).toList()
-                    localRepository.insertCalificaciones(matricula, items)
-                    Log.d("LOCAL_WORKER", "CalifUnidades insertadas: count=${items.size}")
+                    mainRepository.localRepository.insertCalificaciones(matricula, items)
                 }
-
                 "califFinal" -> {
                     val items = gson.fromJson(resultJson, Array<CalificacionFinalItem>::class.java).toList()
-                    localRepository.insertCalificacionFinal(matricula, items)
-                    Log.d("LOCAL_WORKER", "CalifFinal insertadas: count=${items.size}")
+                    mainRepository.localRepository.insertCalificacionFinal(matricula, items)
                 }
-
-                else -> {
-                    Log.w("LOCAL_WORKER", "Tipo desconocido: $tipo")
-                    return Result.failure()
-                }
+                else -> return WorkResult.failure()
             }
 
-            // Indicar éxito
-            return Result.success(workDataOf("status" to "inserted"))
+            Log.d("LOCAL_WORKER", "Insertado con éxito: $tipo")
+            return WorkResult.success(workDataOf("status" to "inserted"))
+
         } catch (e: Exception) {
-            Log.e("LOCAL_WORKER", "Error en LocalWorker.doWork: ${e.message}", e)
-            return Result.retry()
+            Log.e("LOCAL_WORKER", "Error en LocalWorker: ${e.message}")
+            return WorkResult.retry()
+        }
+    }
+
+    /**
+     * Intenta recuperar el JSON del output del RemoteWorker
+     */
+    private fun getResultJson(remoteIdStr: String?): String? {
+        if (remoteIdStr.isNullOrBlank()) return null
+        return try {
+            val remoteId = UUID.fromString(remoteIdStr)
+            val workInfo = WorkManager.getInstance(applicationContext).getWorkInfoById(remoteId).get()
+            workInfo?.outputData?.getString("result")
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    /**
+     * Lógica específica para el perfil (maneja el mapeo de DTO a Entity)
+     */
+    private suspend fun saveProfile(json: String) {
+        try {
+            // Intento 1: Como Entity
+            val entity = gson.fromJson(json, ProfileEntity::class.java)
+            if (entity.matricula.isNullOrBlank()) throw Exception()
+            mainRepository.localRepository.insertProfile(entity)
+        } catch (e: Exception) {
+            // Fallback: Como DTO
+            val dto = gson.fromJson(json, ProfileStudent::class.java)
+            val entity = ProfileEntity(
+                matricula = dto.matricula,
+                nombre = dto.nombre,
+                carrera = dto.carrera,
+                semActual = dto.semActual,
+                cdtosAcumulados = dto.cdtosAcumulados
+            )
+            mainRepository.localRepository.insertProfile(entity)
         }
     }
 }
+
 
 
 

@@ -120,11 +120,7 @@ class LocalRepository(
 
 
     fun getProfile(matricula: String) = profileDao.getProfile(matricula)
-    fun getAllProfiles() = profileDao.getAllProfiles()
     suspend fun insertProfile(profile: ProfileEntity) = profileDao.insertProfile(profile)
-    suspend fun updateProfile(profile: ProfileEntity) = profileDao.updateProfile(profile)
-    suspend fun deleteProfile(profile: ProfileEntity) = profileDao.deleteProfile(profile)
-
 }
 
 

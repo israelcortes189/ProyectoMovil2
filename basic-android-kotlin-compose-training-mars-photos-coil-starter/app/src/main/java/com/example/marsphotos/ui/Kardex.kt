@@ -36,10 +36,7 @@ import com.example.marsphotos.ui.screens.SNViewModel
 @Composable
 fun Kardex(
     navController: NavHostController,
-    viewModel: SNViewModel,
-    matricula: String? = null,
-    lineamiento: Int = 3,
-    online: Boolean = true
+    viewModel: SNViewModel
 ) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
 
@@ -47,9 +44,8 @@ fun Kardex(
     val cardex by viewModel.cardexState.collectAsState()
 
     // Cargar al entrar: pasamos matricula = null para que el ViewModel recupere la guardada
-    LaunchedEffect(matricula, lineamiento, online) {
-        viewModel.loadCardex(matricula = matricula, lineamiento = lineamiento, online = online)
-    }
+
+    viewModel.loadCardex()
 
     MenuLateral(navController = navController, drawerState = drawerState, viewModel) {
         Scaffold(
@@ -67,7 +63,7 @@ fun Kardex(
                                 .padding(24.dp),
                             contentAlignment = Alignment.TopCenter
                         ) {
-                            Text("No hay registros. Pulsa 'Cargar Cardex' para obtenerlos.")
+                            Text("No hay registros")
                         }
                     } else {
                         LazyColumn(

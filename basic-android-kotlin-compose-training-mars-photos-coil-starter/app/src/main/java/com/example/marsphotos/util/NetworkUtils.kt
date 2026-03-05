@@ -23,7 +23,7 @@ fun isOnline(context: Context): Boolean {
         // Verificar si la red activa tiene la capacidad de acceder a internet.
         return caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     } else {
-        // Para versiones anteriores a Android M se usa la API de NetworkInfo (deprecada).
+        // Para versiones anteriores a Android M se usa la API de NetworkInfo deprecada.
         @Suppress("DEPRECATION")
         val ni = cm.activeNetworkInfo ?: return false
         @Suppress("DEPRECATION")

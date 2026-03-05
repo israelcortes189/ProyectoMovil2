@@ -41,17 +41,13 @@ import androidx.compose.ui.text.style.TextOverflow
 @Composable
 fun CargaAcademica(
     navController: NavHostController,
-    viewModel: SNViewModel,
-    matricula: String? = null,      // null = usar la guardada en ViewModel
-    online: Boolean = true
+    viewModel: SNViewModel
 ) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val carga by viewModel.cargaState.collectAsState()
 
     // Cargar al entrar (matricula = null -> ViewModel usará getSavedMatricula())
-    LaunchedEffect(matricula, online) {
-        viewModel.loadCargaAcademica(matricula = matricula, online = online)
-    }
+    viewModel.loadCargaAcademica()
 
     MenuLateral(navController = navController, drawerState = drawerState, viewModel) {
         Scaffold(

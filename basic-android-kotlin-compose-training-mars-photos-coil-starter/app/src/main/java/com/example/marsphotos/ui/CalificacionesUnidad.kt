@@ -41,27 +41,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
-@RequiresApi(Build.VERSION_CODES.O)
+
 @Composable
 fun CalificacionesUnidad(
     navController: NavHostController,
-    viewModel: SNViewModel,
-    matricula: String? = null,   // null -> usar la guardada en ViewModel
-    online: Boolean = true
+    viewModel: SNViewModel
 ) {
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val calificaciones by viewModel.calificacionesState.collectAsState()
 
-
     // Cargar al entrar (matricula = null -> ViewModel usará getSavedMatricula())
-    LaunchedEffect(matricula, online) {
-        viewModel.loadCalificacionesPorUnidad(matricula = matricula, online = online)
-    }
-
-    val lastSyncMap by viewModel.lastSyncMap.collectAsState()
-    val lastSyncIso = lastSyncMap["last_sync_califUnidades"]
-    val lastSyncLabel = remember(lastSyncIso) { viewModel.formatIsoToLocal(lastSyncIso) }
-
+    viewModel.loadCalificacionesPorUnidad()
 
     MenuLateral(navController = navController, drawerState = drawerState, viewModel) {
         Scaffold(

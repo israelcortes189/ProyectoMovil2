@@ -13,7 +13,6 @@ class MainRepository(
     val localRepository: LocalRepository,
     val remoteRepository: NetworSNRepository
 ) {
-
     suspend fun acceso(m: String, p: String): String {
         return remoteRepository.acceso(m, p)
     }
@@ -47,11 +46,10 @@ class MainRepository(
         return if (online) {
             // 1) Consultar remoto
             val result = remoteRepository.cardex(lineamiento)
-            result?.let { (items, promedio) ->
+            result?.let { (items) ->
                 // 2) Guardar en Room
                 localRepository.insertCardex(matricula, items)
-                // 👉 Aquí también podrías guardar el objeto Promedio en otra tabla si lo necesitas
-            }
+                }
             // 3) Devolver desde Room
             localRepository.getCardex(matricula).firstOrNull()
         } else {
@@ -109,8 +107,6 @@ class MainRepository(
             localRepository.getCalificacionFinal(matricula).firstOrNull()
         }
     }
-
-
 }
 
 

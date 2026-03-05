@@ -21,34 +21,23 @@ import androidx.work.WorkManager
 import com.example.marsphotos.data.AppContainer
 import com.example.marsphotos.data.DefaultAppContainer
 import com.example.marsphotos.data.datbase.AppDatabase
-import com.example.marsphotos.workers.AppWorkerFactory
 import androidx.work.Configuration
 
 
 
 class MarsPhotosApplication : Application() {
-
     lateinit var container: AppContainer
+
     override fun onCreate() {
         super.onCreate()
-
-        // Inicializar contenedor
+        // Inicializa tu contenedor de dependencias
         container = DefaultAppContainer(applicationContext)
 
-        val workerFactory = AppWorkerFactory(container.mainRepository, container.localRepository)
-        val config = Configuration.Builder()
-            .setWorkerFactory(workerFactory)
-            .build()
-
-        if (!WorkManager.isInitialized()) {
-            WorkManager.initialize(this, config)
-            Log.d("APP", "WorkManager inicializado con AppWorkerFactory (manual)")
-        } else {
-            Log.d("APP", "WorkManager ya inicializado, omitiendo initialize()")
-        }
-
+        // Ya no registramos AppWorkerFactory ni inicializamos WorkManager manualmente.
+        Log.d("APP", "Application onCreate: container inicializado, WorkManager usa configuración por defecto")
     }
-
 }
+
+
 
 
