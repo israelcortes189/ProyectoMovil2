@@ -45,6 +45,8 @@ interface SNRepository {
     fun logout()
 }
 
+//se encarga de comunicarse con el servidor
+
 class NetworSNRepository(
     private val snApiService: SICENETWService,
     private val context: Context

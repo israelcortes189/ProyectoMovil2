@@ -82,6 +82,10 @@ sealed interface SNUiState {
  * - repository: fachada que expone operaciones remotas y locales (MainRepository)
  * - appContext: contexto de aplicación para acceder a SharedPreferences y WorkManager
  */
+
+
+//el viwmodel administra la obtencion de los datos del sicenet, si no hay internet
+// obtine lo de la base de datos local
 class SNViewModel(
     private val repository: MainRepository,
     private val appContext: Context

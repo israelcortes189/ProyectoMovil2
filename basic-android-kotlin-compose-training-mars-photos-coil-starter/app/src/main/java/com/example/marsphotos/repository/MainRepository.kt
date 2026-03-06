@@ -9,6 +9,8 @@ import com.example.marsphotos.data.Entityes.ProfileEntity
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.firstOrNull
 
+
+// decide si los datos se deben de obteners desde la web o desde la base de datos local
 class MainRepository(
     val localRepository: LocalRepository,
     val remoteRepository: NetworSNRepository

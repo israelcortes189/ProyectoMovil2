@@ -23,7 +23,7 @@ class LocalRepository(
     private val calificacionUnidadDao: CalificacionUnidadDao,
     private val calificacionFinalDao: CalificacionFinalDao
 ) {
-
+//Funciones que guardan las calificaiones, kardex...
     suspend fun insertCardex(matricula: String, items: List<CardexItem>) {
         val entities = items.map {
             CardexEntity(

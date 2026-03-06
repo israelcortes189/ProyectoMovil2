@@ -10,6 +10,9 @@ import com.example.marsphotos.repository.MainRepository
 import com.google.gson.Gson
 import androidx.work.ListenableWorker.Result as WorkResult
 
+
+//Este worker se encarga de traer lo datos, despues envia los datos
+// al otro worker para que los guarde en la base base de datos local
 class RemoteWorker(
     context: Context,
     params: WorkerParameters,
