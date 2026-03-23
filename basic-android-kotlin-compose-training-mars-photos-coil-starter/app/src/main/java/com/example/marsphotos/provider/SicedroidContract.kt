@@ -1,4 +1,5 @@
 package com.example.marsphotos.provider
+import android.content.UriRelativeFilter.PATH
 import android.net.Uri
 
 object SicedroidContract {
