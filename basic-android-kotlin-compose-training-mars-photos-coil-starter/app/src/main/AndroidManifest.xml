@@ -20,6 +20,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- Permisos para el ContentProvider -->
+    <permission
+        android:name="com.example.marsphotos.permission.READ_PROVIDER"
+        android:protectionLevel="normal" />
+
+    <permission
+        android:name="com.example.marsphotos.permission.WRITE_PROVIDER"
+        android:protectionLevel="normal" />
+
     <application
         android:usesCleartextTraffic="true"
         android:name=".MarsPhotosApplication"
@@ -30,6 +39,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarsPhotos"
         tools:targetApi="33">
+
+        <provider
+            android:name=".provider.SicedroidProvider"
+            android:authorities="com.example.marsphotos.provider"
+            android:exported="true"
+            android:readPermission="com.example.marsphotos.permission.READ_PROVIDER"
+            android:writePermission="com.example.marsphotos.permission.WRITE_PROVIDER" />
 
         <activity
             android:name=".MainActivity"
