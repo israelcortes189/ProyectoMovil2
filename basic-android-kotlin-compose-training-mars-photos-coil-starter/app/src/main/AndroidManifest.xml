@@ -24,7 +24,6 @@
     <permission
         android:name="com.example.marsphotos.permission.READ_PROVIDER"
         android:protectionLevel="normal" />
-
     <permission
         android:name="com.example.marsphotos.permission.WRITE_PROVIDER"
         android:protectionLevel="normal" />

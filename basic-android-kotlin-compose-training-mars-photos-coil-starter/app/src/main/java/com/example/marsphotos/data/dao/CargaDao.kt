@@ -21,7 +21,6 @@ interface CargaDao {
     @Query("DELETE FROM carga_academica WHERE matricula = :matricula")
     suspend fun clearCargaByMatricula(matricula: String)
 
-
     // --- Añadir estas dos APIs para ContentProvider ---
     @Query("""
         SELECT rowid AS _id,
