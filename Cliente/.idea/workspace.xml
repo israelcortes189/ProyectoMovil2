@@ -10,54 +10,103 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9808584-ef6e-4a9b-9146-6869ebd86ddd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/example/cliente/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cliente/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cliente/ui/theme/Color.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cliente/ui/theme/Theme.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cliente/ui/theme/Type.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/example/cliente/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/migrations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cliente/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cliente/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/add-repository.md" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/add-repository.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/get-data-from-the-internet.md" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/get-data-from-the-internet.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/load-and-display-images.md" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/load-and-display-images.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/project-bookshelf.md" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.github/ISSUE_TEMPLATE/project-bookshelf.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/MarsPhotosApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/MarsPhotosApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/componentes/MenuLateral.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/componentes/MenuLateral.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/componentes/TopBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/componentes/TopBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/AddCookiesInterceptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/AddCookiesInterceptor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/AppContainer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/AppContainer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CalificacionFinalEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CalificacionFinalEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CalificacionUnidadEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CalificacionUnidadEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CardexEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CardexEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CargaEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/CargaEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/ProfileEntity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/Entityes/ProfileEntity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/MarsPhotosRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/MarsPhotosRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/ReceivedCookiesInterceptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/ReceivedCookiesInterceptor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CalificacionFinalDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CalificacionFinalDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CalificacionUnidadDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CalificacionUnidadDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CardexDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CardexDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CargaDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/CargaDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/ProfileDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/dao/ProfileDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/datbase/AppDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/data/datbase/AppDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/MarsPhoto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/MarsPhoto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/MenuItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/MenuItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/ResponseAcceso.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/ResponseAcceso.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CalificacionFinalItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CalificacionFinalItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CalificacionUnidadItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CalificacionUnidadItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CardexItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CardexItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CargaItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/CargaItem.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/ProfileStudent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/ProfileStudent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/PromedioInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/model/entityes/PromedioInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/network/MarsApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/network/MarsApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/network/SICENETWService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/network/SICENETWService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/provider/SicedroidContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/provider/SicedroidContract.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/provider/SicedroidProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/provider/SicedroidProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/repository/LocalRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/repository/LocalRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/repository/MainRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/repository/MainRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/repository/SNRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/repository/SNRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/CalificacionFinal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/CalificacionFinal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/CalificacionesUnidad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/CalificacionesUnidad.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/CargaAcademica.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/CargaAcademica.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/Kardex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/Kardex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/LoginScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/LoginScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/navigation/AppNavHost.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/navigation/AppNavHost.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/navigation/Rutas.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/navigation/Rutas.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/screens/SNViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/screens/SNViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Color.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Color.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Shape.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Shape.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Theme.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Type.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/ui/theme/Type.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/util/NetworkUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/util/NetworkUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/workers/LocalWorker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/workers/LocalWorker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/workers/RemoteWorker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/java/com/example/marsphotos/workers/RemoteWorker.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/calificacion_final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/calificacion_final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/calificacion_parcial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/calificacion_parcial.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/carga_academica.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/carga_academica.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_broken_image.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_broken_image.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_connection_error.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_connection_error.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/kerdex.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/kerdex.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/loading_img.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/drawable/loading_img.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../basic-android-kotlin-compose-training-mars-photos-coil-starter/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +116,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\Israel Cortes\.android\avd\Pixel_Fold_API_35.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=R5CT32KQ9HY)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -75,14 +124,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\Israel Cortes\.gradle\wrapper\dists\gradle-8.11.1-bin\bpt9gzteqjrbo1mjrsomdt32c\gradle-8.11.1" javaHome="C:\Program Files\Android\Android Studio\jbr" gradleVersion="8.11.1">
-    <option name="jvmArguments">
-      <list>
-        <option value="-Didea.compose.hot-reload=true" />
-        <option value="-Didea.compose.hot-reload.version=2" />
-      </list>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -92,24 +133,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  },
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\DELL\\.gradle"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
-      <module name="Cliente.app" />
-      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <module name="Cliente.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -117,17 +161,15 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
-      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
       <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
-      <option name="RESTORE_ENABLED" value="false" />
-      <option name="RESTORE_FILE" value="" />
-      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="DEBUGGER_TYPE" value="Auto" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
@@ -169,7 +211,6 @@
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
@@ -188,21 +229,5 @@
       <updated>1774264757729</updated>
     </task>
     <servers />
-  </component>
-  <component name="play_dynamic_filters_status">
-    <option name="appIdToCheckInfo">
-      <map>
-        <entry key="com.example.cliente">
-          <value>
-            <CheckInfo lastCheckTimestamp="1779814549168" />
-          </value>
-        </entry>
-        <entry key="com.example.cliente.test">
-          <value>
-            <CheckInfo lastCheckTimestamp="1779814549166" />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
